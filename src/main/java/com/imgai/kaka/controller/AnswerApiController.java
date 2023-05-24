@@ -17,8 +17,8 @@ public class AnswerApiController {
 
     private final AnswerService service;
 
-    @PostMapping("/create")
-    public ResponseEntity<String> getAnswer(@RequestBody String question) throws JsonProcessingException {
+    @GetMapping("/create/{question}")
+    public ResponseEntity<String> getAnswer(@PathVariable String question) throws JsonProcessingException {
         return ResponseEntity.status(HttpStatus.OK).body(service.getAnswer(question));
     }
 
