@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <title>CloudAI</title>
+</head>
+<body>
+    <div>
+        <h1>Chat with AI</h1>
+        {{#answers}}
+            <div>
+                <p>{{ question }}</p>
+                <p>{{ answer }}</p>
+            </div>
+        {{/answers}}
+        <input type="text" placeholder="무엇을 물어볼까요?" id="send-text"/>
+        <button id="send-btn">전송하기</button>
+    </div>
+    <script src = "/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</body>
+</html>

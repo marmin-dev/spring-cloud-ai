@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.imgai.kaka.dtos.AnswerResponseDto;
 import com.imgai.kaka.entities.Answer;
 import com.imgai.kaka.persistneces.AnswerRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,10 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -87,6 +86,15 @@ public class AnswerService {
         ans.setQuestion(str);
         ans.setAnswer(answer);
         return repository.save(ans).getAnswer();
+    }
+
+    @Transactional
+    public List<AnswerResponseDto> getAnswerList(){
+        List<AnswerResponseDto> list = repository.getTenAnswer()
+                .stream().map(answer -> new AnswerResponseDto(answer))
+                .collect(Collectors.toList());
+        Collections.reverse(list);
+        return list;
     }
 
 
