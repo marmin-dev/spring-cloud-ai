@@ -1,0 +1,92 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+.phone{
+    background-color: black;
+    border-radius: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    /* mobile */
+    @media(max-width: 768px){
+        width: 380px;
+        height: 690px;
+
+    }
+    @media(min-width: 768px){
+        width: 550px;
+        height: 780px;
+
+    }
+}
+.scroll::-webkit-scrollbar {
+    display: none;
+  }
+.display{
+
+    background-color: cadetblue;
+    overflow-y: scroll;
+    @media(max-width: 768px){
+        width: 340px;
+        height: 600px;
+
+    }
+    @media(min-width: 768px){
+        width: 520px;
+        height: 650px;
+    }
+}
+.chat1 {
+    width: 100%;
+    justify-content: end;
+    display: flex;
+}
+.chat1 .me{
+    display: flex;
+    justify-content: end;
+    background-color: yellow;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0px;
+    max-width: 60%;
+    margin: 7px;
+}
+.chat2{
+    max-width: 60%;
+}
+.chat2 .you{
+    background-color: yellow;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 7px;
+
+}
+.input-div{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    @media(max-width: 768px){
+        width: 380px;
+    }
+    @media(min-width: 768px){
+        width: 550px;
+    }
+}
+.input-div input{
+    width: 70%;
+    border-radius:7px;
+    height: 20px;
+    background-color: white;
+
+}
+.input-div button{
+    color: black;
+    background-color: yellow;
+    width: 20%;
+    border-radius: 7px;
+}

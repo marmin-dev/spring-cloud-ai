@@ -3,19 +3,29 @@
 <meta charset="utf-8">
 <head>
     <title>CloudAI</title>
+     <link rel="stylesheet" type="text/css" href="/css/style.css">
+
 </head>
 <body>
-    <div>
-        <h1>Chat with AI</h1>
+    <div class="phone"> 
+    <div class="display">
+        <div class="header">
+        <h1>똑똑한 친구</h1>
+    </div>
         {{#answers}}
-            <div>
-                <p>{{ question }}</p>
-                <p>{{ answer }}</p>
+            <div class="chat1">
+                <p class="me">{{ question }}</p>
+            </div>
+            <div class="chat2">
+                <p class="you">{{ answer }}</p>
             </div>
         {{/answers}}
-        <input type="text" placeholder="무엇을 물어볼까요?" id="send-text"/>
-        <button id="send-btn" onclick="readO()">전송하기</button>
     </div>
+        <div class="input-div">
+            <input type="text" placeholder="무엇을 물어볼까요?" id="send-text"/>
+            <button id="send-btn" onclick="readO()">전송하기</button>
+        </div>
+</div>
     <script src = "/js/control.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src = "/js/script.js"></script>
