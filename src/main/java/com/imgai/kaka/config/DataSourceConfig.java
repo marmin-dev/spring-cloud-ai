@@ -13,18 +13,18 @@ public class DataSourceConfig {
 
     @Primary
     @Bean
-    @ConfigurationProperties("spring.datasource")
+    @ConfigurationProperties("spring.second-datasource")
     public DataSource primaryDataSource() {
         return DataSourceBuilder.create().driverClassName("org.mariadb.jdbc.Driver")
-                .url("jdbc:mariadb://app-db-1a.ct4jmgb2iux6.ap-northeast-1.rds.amazonaws.com:3306/draw?characterEncoding=UTF-8")
+                .url("jdbc:mariadb://app-db-1c.ct4jmgb2iux6.ap-northeast-1.rds.amazonaws.com:3306/draw?characterEncoding=UTF-8")
                 .build();
     }
 
     @Bean
-    @ConfigurationProperties("spring.second-datasource")
+    @ConfigurationProperties("spring.datasource")
     public DataSource secondaryDataSource() {
         return DataSourceBuilder.create().driverClassName("org.mariadb.jdbc.Driver")
-                .url("jdbc:mariadb://app-db-1c.ct4jmgb2iux6.ap-northeast-1.rds.amazonaws.com:3306/draw?characterEncoding=UTF-8")
+                .url("jdbc:mariadb://app-db-1a.ct4jmgb2iux6.ap-northeast-1.rds.amazonaws.com:3306/draw?characterEncoding=UTF-8")
                 .build();
     }
 }
